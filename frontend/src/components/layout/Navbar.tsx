@@ -335,12 +335,8 @@ export const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile - Language & Menu Button */}
+            {/* Mobile - Menu Button */}
             <div className="md:hidden flex items-center gap-2 shrink-0">
-              <div className="flex-shrink-0">
-                <LanguageSwitcher />
-              </div>
-              
               <button
                 className="p-2 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 text-green-700 transition-smooth hover:scale-110 shadow-md hover:shadow-lg border border-green-200/50 active:scale-95"
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -417,6 +413,19 @@ export const Navbar = () => {
                   </motion.div>
                 );
               })}
+
+            {/* Divider */}
+            <div className="border-t border-green-100 my-2 w-full" />
+
+            {/* Mobile Language Switcher */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className="w-full px-2 py-1 [&_button]:w-full"
+            >
+              <LanguageSwitcher />
+            </motion.div>
 
             {/* Divider */}
             <div className="border-t border-green-100 my-2 w-full" />
